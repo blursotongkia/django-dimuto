@@ -1,0 +1,29 @@
+item {
+  id: 1
+  name: 'blemish'
+}
+
+item {
+  id: 2
+  name: 'unripe'
+}
+
+item {
+  id: 3
+  name: 'almost ripe'
+}
+
+item {
+  id: 4
+  name: 'ripe'
+}
+
+item {
+  id: 5
+  name: 'overripe'
+}
+
+item {
+  id: 6
+  name: 'rotten'
+}

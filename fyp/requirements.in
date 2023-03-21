@@ -1,0 +1,10 @@
+# DJANGO
+django
+django-cors-headers
+djangorestframework
+mysqlclient
+django-storages
+boto3
+requests
+Pillow
+# xhtml2pdf

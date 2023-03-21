@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <style>
+
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+
+        body{
+            width:900px;
+        }
+
+        #resize{
+            width: 151px; 
+            height: 201px;
+            object-fit:contain;
+        }
+
+        .container{
+            width:800px;
+            text-align:center;
+        }
+
+        .avocados{
+            position: relative;
+            height:100%;
+            width: 700px;
+            overflow: hidden;
+        }
+        img{
+            margin: 20px;
+        }
+    </style>
+
+    {% load static %}
+    <body>
+        <logo class="logo">
+            <img src="{% static 'images/logo.png' %}" />
+        </logo>
+        <h2 align="center">Avocados Analysis Report</align></h2>
+        <hr>
+    <font face="Courier New, monospace">
+        <p>Supplier : {{supplier}}</p>
+        <p>Trade Contract Number : {{trade_contract_no}}</p>
+        <hr>
+        <p>According to our image analysis, the classification of avocados is as follows:</p>
+        <p>% of blemished   Avocados : {{blemished_pc}}%</p>
+        <p>% of unripe      Avocados : {{unripe_pc}}%</p>
+        <p>% of almost ripe Avocados : {{almost_ripe_pc}}%</p>
+        <p>% of ripe        Avocados : {{ripe_pc}}%</p>
+        <p>% of over ripe   Avocados : {{overripe_pc}}%</p>
+        <p>% of rotten      Avocados : {{rotten_pc}}%</p>
+        <br>
+        <div class="container">
+            <div class="avocados">
+                {% for img in images %}
+                <img src="{{STATIC_URL}}{{img.image.url}}" id="resize"/>
+                <img src="{{STATIC_URL}}{{img.predicted_image.url}}" id="resize"/>
+                <p style="display: block;"></p>
+                {% endfor %}
+            </div>
+        </div>
+    </font>
+    </body>
+</html>
